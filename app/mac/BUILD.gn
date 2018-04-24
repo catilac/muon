@@ -87,6 +87,9 @@ tweak_info_plist("electron_framework_plist") {
 mac_framework_bundle("electron_framework") {
   output_name = chrome_framework_name
 
+  framework_version = "A"
+  framework_contents = ["Resources"]
+
   configs += [
     "//build/config/compiler:wexit_time_destructors",
     ":external_binaries_config"
@@ -242,7 +245,6 @@ action("extra_helpers") {
 
 bundle_data("electron_versioned_bundle_data") {
   sources = [
-    "$root_out_dir/$chrome_framework_name.framework",
     "$root_out_dir/$chrome_helper_name.app",
     "$root_out_dir/$chrome_helper_name EH.app",
     "$root_out_dir/$chrome_helper_name NP.app",
@@ -346,7 +348,6 @@ group("chromedriver_dist_resources") {}
 # This list must be updated with the two targets' deps list below, and
 # the list of _dsyms in :electron_dsym_archive.
 _electron_symbols_sources = [
-  "$root_out_dir/$chrome_framework_name.framework/$chrome_framework_name",
   "$root_out_dir/$chrome_helper_name.app/Contents/MacOS/$chrome_helper_name",
   "$root_out_dir/$chrome_product_full_name.app/Contents/MacOS/$chrome_product_full_name",
   "$root_out_dir/crashpad_handler",
