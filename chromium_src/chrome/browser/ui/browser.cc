@@ -62,6 +62,7 @@ Browser::Browser(const CreateParams& params)
                                           params.profile)),
       app_name_(params.app_name),
       is_trusted_source_(params.trusted_source),
+      session_id_(SessionID::NewUnique()),
       initial_show_state_(params.initial_show_state),
       is_session_restore_(params.is_session_restore),
       weak_factory_(this) {
