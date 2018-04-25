@@ -52,7 +52,7 @@ Browser::CreateParams::CreateParams(Type type, Profile* profile)
 
 Browser::CreateParams::CreateParams(const CreateParams& other) = default;
 
-Browser::Browser(const CreateParams& params, SessionID session_id)
+Browser::Browser(const CreateParams& params)
     : type_(params.type),
       profile_(params.profile),
       window_(params.window),
@@ -62,7 +62,6 @@ Browser::Browser(const CreateParams& params, SessionID session_id)
                                           params.profile)),
       app_name_(params.app_name),
       is_trusted_source_(params.trusted_source),
-      session_id_(session_id),
       initial_show_state_(params.initial_show_state),
       is_session_restore_(params.is_session_restore),
       weak_factory_(this) {
