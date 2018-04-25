@@ -118,7 +118,8 @@ Window::Window(v8::Isolate* isolate, v8::Local<v8::Object> wrapper,
   create_params.window = window_.get();
   window_->SetBrowser(new ::Browser(create_params));
 
-  window_->browser()->session_id().set_id(-1);
+  // FIXME(hferreiro): cannot set ids anymore
+  // window_->browser()->session_id().set_id(-1);
   web_contents->SetOwnerWindow(window_.get());
 
 #if defined(TOOLKIT_VIEWS)
@@ -139,7 +140,8 @@ Window::Window(v8::Isolate* isolate, v8::Local<v8::Object> wrapper,
   if (!parent.IsEmpty())
     parent->child_windows_.Set(isolate, ID(), wrapper);
 
-  window_->browser()->session_id().set_id(ID());
+  // FIXME(hferreiro): cannot set ids anymore
+  // window_->browser()->session_id().set_id(ID());
   Emit("initialized");
 }
 
