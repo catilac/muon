@@ -52,7 +52,7 @@ Browser::CreateParams::CreateParams(Type type, Profile* profile)
 
 Browser::CreateParams::CreateParams(const CreateParams& other) = default;
 
-Browser::Browser(const CreateParams& params, SessionID session_id)
+Browser::Browser(const CreateParams& params)
     : type_(params.type),
       profile_(params.profile),
       window_(params.window),
