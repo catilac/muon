@@ -147,7 +147,7 @@ source_set("browser") {
     ":password_manager",
     ":sessions",
     ":web_data",
-    "chrome/browser/safe_browsing",
+    "//chrome/browser/safe_browsing",
     "//electron/brave/browser:tab_manager",
     "//base",
     "//chrome/common",
