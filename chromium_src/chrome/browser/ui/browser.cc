@@ -95,6 +95,10 @@ void Browser::UnregisterKeepAlive() {
   keep_alive_.reset();
 }
 
+WebContents* Browser::OpenURL(const OpenURLParams& params) {
+  return nullptr;
+}
+
 bool Browser::SupportsWindowFeature(WindowFeature feature) const {
   return SupportsWindowFeatureImpl(feature, true);
 }
